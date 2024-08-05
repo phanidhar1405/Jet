@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ItemsService } from '../items.service';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Item } from '../app.component';
 
 @Component({
   selector: 'app-itemdetails',
@@ -22,7 +23,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrl: './itemdetails.component.scss',
 })
 export class ItemdetailsComponent {
-  everyitem: any;
+  everyitem!: any;
   isLoading: boolean = true;
   msg = '';
   constructor(
@@ -36,7 +37,6 @@ export class ItemdetailsComponent {
       .then((data) => {
         this.everyitem = data;
         this.isLoading = false;
-
         // this.trustedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
         //   this.everyrecipe.image
         // );
