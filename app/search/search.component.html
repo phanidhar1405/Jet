@@ -1,0 +1,6 @@
+<div class="all-items-container">
+  @for(item of filteredItems; track $index) {
+  <app-item [everyitem]="item" [id]="item.id" />
+  }
+</div>
+<!-- (delete_the_recipe)="deleterecipe($event)" -->
